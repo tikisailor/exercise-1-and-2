@@ -7,10 +7,15 @@
 3. Update author in Cargo.toml file
 4. Run a single node testnet and send a transaction
 
+### Testnet
 
-![Alt text](testnet.png?raw=true "Running testnet")
+![Testnet image](testnet.png?raw=true "Running testnet")
 
-![Alt text](transaction.png?raw=true "Transaction")
+### Transaction
+
+![Transaction image](transaction.png?raw=true "Transaction")
+
+
 ---
 
 ## Exercise Two
@@ -21,5 +26,16 @@
     - Kitty must have one owner
     - A user can have zero or more kitties
     - Users can create kitties
+
+### Design
+
+Storages
+    - Kitties_record: map AccountId => Vec<Kitty:u128>
+
+Calls
+    - fn create_kitty(AccountId)
+        - kitty = OffchainWorker random u128
+        - fn assign_owner(AccountId, kitty)
+
 
 ---
